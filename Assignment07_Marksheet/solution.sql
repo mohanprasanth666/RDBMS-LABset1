@@ -1,10 +1,22 @@
 DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
--- Create Marksheet table
 
--- Insert sample records
+CREATE TABLE Marksheet (
+    RollNo INT,
+    Name VARCHAR(50),
+    Department VARCHAR(10),
+    Marks INT
+);
 
--- Display students with Marks > 80
+INSERT INTO Marksheet (RollNo, Name, Department, Marks) VALUES
+(1, 'Arun', 'CSE', 85),
+(2, 'Divya', 'IT', 78),
+(3, 'Karthik', 'CSE', 92),
+(4, 'Nisha', 'ECE', 67),
+(5, 'Rahul', 'IT', 88);
 
--- Sort by Marks DESC
+SELECT RollNo, Name, Department, Marks
+FROM Marksheet
+WHERE Marks > 80
+ORDER BY Marks DESC;
